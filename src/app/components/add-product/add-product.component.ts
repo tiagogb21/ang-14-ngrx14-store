@@ -41,6 +41,8 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  cancel() {}
+
   save() {
     this.store.dispatch(
       invokeSaveNewProductAPI({ newProduct: this.productForm })
