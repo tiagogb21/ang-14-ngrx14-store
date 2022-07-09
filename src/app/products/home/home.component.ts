@@ -10,6 +10,7 @@ import { selectProducts } from '../store/products.selector';
 })
 export class HomeComponent implements OnInit {
   constructor(private store: Store) {}
+
   products$ = this.store.pipe(select(selectProducts));
 
   ngOnInit(): void {

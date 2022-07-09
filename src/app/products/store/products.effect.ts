@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
 import { EMPTY, map, mergeMap, withLatestFrom } from 'rxjs';
 import { ProductsService } from '../products.service';
+import { Appstate } from './appstate';
 import { productsFetchAPISuccess, invokeProductsAPI } from './products.action';
 import { selectProducts } from './products.selector';
 
@@ -13,7 +14,8 @@ export class ProductsEffect {
     private actions$: Actions,
     private productsService: ProductsService,
     // Injected the 'Store'
-    private store: Store
+    private store: Store,
+    private appStore: Store<Appstate>
   ) {}
 
   loadAllProducts$ = createEffect(() =>
