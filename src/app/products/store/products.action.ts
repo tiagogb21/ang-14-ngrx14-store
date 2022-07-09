@@ -28,3 +28,10 @@ export const saveNewProductAPISucess = createAction(
   '[Products API] save new product api success',
   props<{ newProduct: Products }>()
 );
+
+// UPDATE
+
+export const invokeUpdateProductAPI = createAction(
+  '[Products API] Invoke update product api',
+  props<{ updateProduct: Products }>()
+);

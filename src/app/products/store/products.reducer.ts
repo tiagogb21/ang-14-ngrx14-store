@@ -5,6 +5,7 @@ import { Products } from '../store/products';
 import {
   productsFetchAPISuccess,
   saveNewProductAPISucess,
+  updateProductAPISucess,
 } from './products.action';
 
 export const initialState: ReadonlyArray<Products> = [];
@@ -18,6 +19,11 @@ export const productReducer = createReducer(
   on(saveNewProductAPISucess, (state, { newProduct }) => {
     let newState = [...state];
     newState.unshift(newProduct);
+    return newState;
+  }),
+  on(updateProductAPISucess, (state, { updateProduct }) => {
+    let newState = state.filter((product) => product._id != updateProduct._id);
+    newState.unshift(updateProduct);
     return newState;
   })
 );

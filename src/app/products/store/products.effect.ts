@@ -9,6 +9,8 @@ import {
   invokeProductsAPI,
   invokeSaveNewProductAPI,
   saveNewProductAPISucess,
+  invokeUpdateProductAPI,
+  updateProductAPISucess,
 } from './products.action';
 import { selectProducts } from './products.selector';
 import { setAPIStatus } from 'src/app/shared/store/app.action';
@@ -57,7 +59,7 @@ export class ProductsEffect {
         this.appStore.dispatch(
           setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
         );
-        return this.productsService.create(action.newBook).pipe(
+        return this.productsService.create(action.newProduct).pipe(
           map((data) => {
             this.appStore.dispatch(
               setAPIStatus({
@@ -68,6 +70,28 @@ export class ProductsEffect {
               })
             );
             return saveNewProductAPISucess({ newProduct: data });
+          })
+        );
+      })
+    );
+  });
+
+  // UPDATE - PUT
+  updateProductAPI$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(invokeUpdateProductAPI),
+      switchMap((action) => {
+        this.appStore.dispatch(
+          setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+        );
+        return this.productsService.update(action.updateProduct).pipe(
+          map((data) => {
+            this.appStore.dispatch(
+              setAPIStatus({
+                apiStatus: { apiResponseMessage: '', apiStatus: 'success' },
+              })
+            );
+            return updateProductAPISucess({ updateProduct: data });
           })
         );
       })

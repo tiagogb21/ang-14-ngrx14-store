@@ -2,23 +2,29 @@
   <form action="">
     <article class="title__container">
       <h1>Sign In</h1>
-      <h3>Insert you Account Information</h3>
+      <h5>Insert you Account Information</h5>
     </article>
     <article class="access__container">
       <label for="email">
         <input
           type="email"
-          class="email"
           id="email"
+          class="email"
+          name="email"
+          [(ngModel)]="email"
           placeholder="Username or Email"
+          required
         />
       </label>
       <label for="">
         <input
           type="password"
-          class="password"
           id="password"
+          class="password"
+          name="password"
+          [(ngModel)]="password"
           placeholder="Password"
+          required
         />
       </label>
       <button>Login your Account</button>

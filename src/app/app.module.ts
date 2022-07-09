@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CarrousselComponent } from './components/carroussel/carroussel.component';
 import { appReducer } from './shared/store/app.reduce';
 import { AddProductComponent } from './components/add-product/add-product.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     LoginComponent,
     CarrousselComponent,
     AddProductComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,

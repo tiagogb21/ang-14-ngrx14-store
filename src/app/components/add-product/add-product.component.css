@@ -1,0 +1,79 @@
+.add__container {
+  display: flex;
+  flex-direction: column;
+  background: #1b1919;
+  justify-content: space-around;
+  padding: 3vw;
+  height: 120vh;
+}
+
+.title__container {
+  color: white;
+  text-align: center;
+  width: 90vw;
+}
+
+.principal__container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.img__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img__container img {
+  width: 90%;
+}
+
+.game {
+  width: 100%;
+}
+
+.forms__container {
+  color: #fff;
+}
+
+.forms__container div {
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  margin-right: 3vw;
+}
+
+input {
+  padding-left: 1vw;
+  border: 0.5vw solid #f94443;
+  background: #3f403f;
+  color: white;
+}
+
+.input-length {
+  width: 80%;
+}
+
+input::placeholder {
+  color: white;
+}
+
+.button__container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-cancel {
+  background: #595959;
+  color: white;
+  margin-right: 3vw;
+}
+
+.btn-save {
+  background: #f94443;
+  color: white;
+}

@@ -16,4 +16,10 @@ export class ProductsService {
       payload
     );
   }
+  update(payload: Products) {
+    return this.http.put<Products>(
+      `https://api-labs.tindin.com.br/games`,
+      payload
+    );
+  }
 }

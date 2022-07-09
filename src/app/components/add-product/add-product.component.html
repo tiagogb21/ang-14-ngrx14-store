@@ -1,114 +1,138 @@
 <!-- two way data binding -->
 <!-- ([(ngModel)]="productForm.tags") -->
 
-<!-- Home -->
-<!-- Name of Game -->
+<section class="add__container">
+  <!-- Home -->
+  <article class="title__container">
+    <img src="" alt="" />
+    <p>| Name of Game Here</p>
+  </article>
+  <!-- Name of Game -->
 
-<!-- imagem -->
-<!-- carrossel -->
+  <section class="principal__container">
+    <!-- imagem -->
+    <div class="img__container">
+      <img src="../../../assets/game.png" alt="" />
+    </div>
+    <!-- carrossel -->
 
-<!-- form -->
+    <!-- form -->
 
-<div class="container">
-  <!-- nota -->
+    <div class="forms__container">
+      <!-- nota -->
 
-  <!-- nome -->
-  <div class="mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtBookName"
-      placeholder="Enter game name"
-    />
-  </div>
+      <!-- nome -->
+      <div class="d-flex mb-3">
+        <input
+          type="text"
+          class="game"
+          id="txtProductName"
+          placeholder="Enter game name"
+        />
+      </div>
 
-  <!-- resume -->
+      <!-- resume -->
 
-  <div class="mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="txtAuthor"
-      placeholder="Enter resume game here"
-    />
-  </div>
+      <div class="d-flex mb-3">
+        <input
+          type="text"
+          class="game"
+          id="txtAuthor"
+          placeholder="Enter resume game here"
+        />
+      </div>
 
-  <!-- Genres -->
+      <!-- Genres -->
 
-  <div class="mb-3">
-    <label for="txtCost" class="form-label">Genres</label>
-    <input
-      type="number"
-      class="form-control"
-      id="txtCost"
-      placeholder="Select genres"
-    />
-  </div>
+      <div class="d-flex mb-3">
+        <label for="txtCost" class="mr-3 form-label">Genres:</label>
+        <input
+          type="number"
+          class="input-length"
+          id="txtCost"
+          placeholder="Select genres"
+        />
+      </div>
 
-  <!-- Studio -->
+      <!-- Studio -->
 
-  <div class="mb-3">
-    <label for="txtCost" class="form-label">Studio</label>
-    <input
-      type="number"
-      class="form-control"
-      id="txtCost"
-      placeholder="Select one studio"
-    />
-  </div>
+      <div class="d-flex mb-3 align-items-center">
+        <label for="txtCost" class="form-label">Studio:</label>
+        <input
+          type="number"
+          class="input-length"
+          id="txtCost"
+          placeholder="Select one studio"
+        />
+      </div>
 
-  <!-- Company -->
+      <!-- Company -->
 
-  <div class="mb-3">
-    <label for="txtCost" class="form-label">Company</label>
-    <input class="form-control" id="txtCost" placeholder="Select one company" />
-  </div>
+      <div class="d-flex mb-3">
+        <label for="txtCost" class="form-label">Company:</label>
+        <input
+          class="input-length"
+          id="txtCost"
+          placeholder="Select one company"
+        />
+      </div>
 
-  <!-- Platforms -->
+      <!-- Platforms -->
 
-  <div class="mb-3">
-    <label for="txtCost" class="form-label">Platforms</label>
-    <input class="form-control" id="txtCost" placeholder="Select one company" />
-  </div>
+      <div class="d-flex mb-3">
+        <label for="txtCost" class="form-label">Platforms:</label>
+        <input
+          class="input-length"
+          id="txtCost"
+          placeholder="Select one company"
+        />
+      </div>
 
-  <!-- Tags -->
+      <!-- Tags -->
 
-  <div class="mb-3">
-    <label for="txtCost" class="form-label">Tags</label>
-    <input class="form-control" id="txtCost" placeholder="Select one company" />
-  </div>
+      <div class="d-flex mb-3">
+        <label for="txtCost" class="form-label">Tags:</label>
+        <input
+          class="input-length"
+          id="txtCost"
+          placeholder="Select one company"
+        />
+      </div>
 
-  <!-- Medium Price -->
+      <!-- Medium Price -->
 
-  <div class="mb-3">
-    <label for="txtCost" class="form-label">Medium Price</label>
-    <input
-      type="number"
-      class="form-control"
-      id="txtCost"
-      placeholder="Select one company"
-    />
-  </div>
+      <div class="d-flex mb-3">
+        <label for="txtCost" class="form-label">Medium Price:</label>
+        <input
+          type="number"
+          class="input-length"
+          id="txtCost"
+          placeholder="Select one company"
+        />
+      </div>
 
-  <!-- Release Year -->
+      <!-- Release Year -->
 
-  <div class="mb-3">
-    <label for="txtCost" class="form-label">Release Year</label>
-    <input
-      type="number"
-      class="form-control"
-      id="txtCost"
-      placeholder="Select one company"
-    />
-  </div>
+      <div class="d-flex mb-3">
+        <label for="txtCost" class="form-label">Release Year:</label>
+        <input
+          type="text"
+          class="input-length"
+          id="txtCost"
+          placeholder="Select one company"
+        />
+      </div>
+    </div>
+    <!-- Description -->
+  </section>
 
-  <!-- Description -->
+  <section class="button__container">
+    <!-- Cancel -->
+    <button type="button" class="btn btn-cancel">Cancel</button>
 
-  <!-- Cancel -->
-
-  <!-- <button type="button" class="btn btn-dark" (click)="cancel()">Cancel</button> -->
-
-  <!-- Save Game -->
-
-  <button type="button" class="btn btn-dark" (click)="save()">Save Game</button>
-</div>
+    <!-- Save Game -->
+    <button type="button" class="btn btn-save" (click)="save()">
+      Save Game
+    </button>
+  </section>
+</section>
