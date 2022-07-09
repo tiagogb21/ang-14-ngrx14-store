@@ -1,12 +1,13 @@
-<section class="container mt-2">
-  <section class="row row-cols-1 row-cols-md-3 g-4">
+<section class="home__container">
+  <section class="row row-cols-1 row-cols-md-3">
     <section class="col" *ngFor="let product of products$ | async">
       <section class="card">
         <article class="card-body">
           <h5 class="card-title">{{ product.title }}</h5>
         </article>
-        <ul class="list-group list-group-flush">
+        <ul class="text-center list-group list-group-flush">
           <img src="{{ product.photos }}" alt="{{ product.title }}" />
+          <p>{{ product.mediumPrice | currency }}</p>
           <p>{{ product.rating }}/10</p>
         </ul>
       </section>

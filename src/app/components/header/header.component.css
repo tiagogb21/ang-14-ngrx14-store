@@ -5,3 +5,56 @@ nav {
 .logo {
   filter: opacity(0.3) drop-shadow(0, 0, 0, #f94443);
 }
+
+header {
+  height: 18vh;
+  display: flex;
+  background: #f94443;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4vw;
+}
+
+.logo__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo__container img {
+  width: 15vw;
+}
+
+.search__container {
+  border-radius: 999px;
+  background: #fff;
+  padding: 1vw;
+  width: 37vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search__container input {
+  border: none;
+  font-size: 1.5vw;
+}
+
+.search__container button {
+  border-radius: 100px;
+  background: #f94443;
+  color: #fff;
+  background: rgb(10, 10, 10);
+  padding: 1vw;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.t {
+  width: 4vw;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.search__container > input:focus {
+  outline-width: 0;
+}
