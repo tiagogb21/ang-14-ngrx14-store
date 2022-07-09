@@ -10,7 +10,21 @@ export const productsFetchAPISuccess = createAction(
   props<{ allProducts: Products[] }>()
 );
 
+// GET
+
 export const updateProductAPISucess = createAction(
   '[Products API] update product api success',
   props<{ updateProduct: Products }>()
+);
+
+// POST
+
+export const invokeSaveNewProductAPI = createAction(
+  '[Products API] Invoke save new product api',
+  props<{ newProduct: Products }>()
+);
+
+export const saveNewProductAPISucess = createAction(
+  '[Products API] save new product api success',
+  props<{ newProduct: Products }>()
 );

@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
-import { EMPTY, map, mergeMap, withLatestFrom } from 'rxjs';
+import { EMPTY, map, mergeMap, switchMap, withLatestFrom } from 'rxjs';
 import { ProductsService } from '../products.service';
-import { Appstate } from './appstate';
-import { productsFetchAPISuccess, invokeProductsAPI } from './products.action';
+import { Appstate } from '../../shared/store/appstate';
+import {
+  productsFetchAPISuccess,
+  invokeProductsAPI,
+  invokeSaveNewProductAPI,
+  saveNewProductAPISucess,
+} from './products.action';
 import { selectProducts } from './products.selector';
+import { setAPIStatus } from 'src/app/shared/store/app.action';
 
 @Injectable()
 export class ProductsEffect {
@@ -18,6 +24,7 @@ export class ProductsEffect {
     private appStore: Store<Appstate>
   ) {}
 
+  // READ - GET
   loadAllProducts$ = createEffect(() =>
     this.actions$.pipe(
       ofType(invokeProductsAPI),
@@ -41,4 +48,29 @@ export class ProductsEffect {
       })
     )
   );
+
+  // CREATE - POST
+  saveNewProduct$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(invokeSaveNewProductAPI),
+      switchMap((action: any) => {
+        this.appStore.dispatch(
+          setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+        );
+        return this.productsService.create(action.newBook).pipe(
+          map((data) => {
+            this.appStore.dispatch(
+              setAPIStatus({
+                apiStatus: {
+                  apiResponseMessage: '',
+                  apiStatus: 'success',
+                },
+              })
+            );
+            return saveNewProductAPISucess({ newProduct: data });
+          })
+        );
+      })
+    );
+  });
 }

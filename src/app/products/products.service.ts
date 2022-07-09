@@ -10,4 +10,10 @@ export class ProductsService {
   get() {
     return this.http.get<Products[]>('https://api-labs.tindin.com.br/games');
   }
+  create(payload: Products) {
+    return this.http.post<Products>(
+      'https://api-labs.tindin.com.br/games',
+      payload
+    );
+  }
 }

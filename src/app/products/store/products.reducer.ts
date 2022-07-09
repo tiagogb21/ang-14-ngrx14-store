@@ -2,13 +2,22 @@
 
 import { createReducer, on } from '@ngrx/store';
 import { Products } from '../store/products';
-import { productsFetchAPISuccess } from './products.action';
+import {
+  productsFetchAPISuccess,
+  saveNewProductAPISucess,
+} from './products.action';
 
 export const initialState: ReadonlyArray<Products> = [];
 
 export const productReducer = createReducer(
   initialState,
-  on(productsFetchAPISuccess, (state, { allProducts }) => {
+  on(productsFetchAPISuccess, (_state, { allProducts }) => {
     return allProducts;
+  }),
+  // Here we generate the new state along with by adding the newly created record.
+  on(saveNewProductAPISucess, (state, { newProduct }) => {
+    let newState = [...state];
+    newState.unshift(newProduct);
+    return newState;
   })
 );

@@ -1,11 +1,11 @@
 interface Photos {
   name: string;
   url: string;
-  _id: string;
+  _id?: string;
 }
 
 export interface Products {
-  _id: string;
+  _id?: string;
   title: string;
   description: string;
   photos: Photos;

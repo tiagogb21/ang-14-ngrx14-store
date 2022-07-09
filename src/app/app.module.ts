@@ -12,13 +12,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { CarrousselComponent } from './components/carroussel/carroussel.component';
+import { appReducer } from './shared/store/app.reduce';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, LoginComponent, CarrousselComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    LoginComponent,
+    CarrousselComponent,
+    AddProductComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ appState: appReducer }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
