@@ -13,6 +13,12 @@
   color: #fff;
 }
 
+.card-price {
+  margin: 1vw;
+  font-size: 1.5vw;
+  font-weight: bolder;
+}
+
 .card-rating {
   display: flex;
   align-items: center;

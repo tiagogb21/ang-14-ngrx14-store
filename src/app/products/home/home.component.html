@@ -13,7 +13,7 @@
         </article>
         <ul class="text-center list-group list-group-flush">
           <img src="{{ product.photos }}" alt="{{ product.title }}" />
-          <p>{{ product.mediumPrice | currency }}</p>
+          <p class="card-price">{{ product.mediumPrice | currency }}</p>
           <div class="card-rating">
             <p>{{ product.rating }} / 10</p>
           </div>
