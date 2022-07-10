@@ -9,7 +9,7 @@ import { Products } from './products';
 
 export const selectProducts = createFeatureSelector<Products[]>('myproducts');
 
-export const selectProductById = (productId: number) =>
+export const selectProductById = (productId: string) =>
   createSelector(selectProducts, (products: Products[]) => {
     const productbyId = products.filter(
       (product) => `${product._id}` === `${productId}`

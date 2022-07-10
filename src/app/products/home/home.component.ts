@@ -22,11 +22,9 @@ export class HomeComponent implements OnInit {
   products$ = this.store.pipe(select(selectProducts));
 
   deleteModal: any;
-  idToDelete: number = 0;
+  idToDelete: string = '0';
 
   ngOnInit(): void {
-    this.products$.subscribe((value: any[]) => {});
-
     this.deleteModal = new window.bootstrap.Modal(
       document.getElementById('deleteModal')
     );
@@ -34,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(invokeProductsAPI());
   }
 
-  openDeleteModal(id: number) {
+  openDeleteModal(id: string) {
     this.idToDelete = id;
     this.deleteModal.show();
   }

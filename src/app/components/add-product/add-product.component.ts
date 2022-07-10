@@ -46,9 +46,9 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
     let fetchData$ = this.route.paramMap.pipe(
       switchMap((params) => {
-        const id = Number(params.get('id'));
+        const id = params.get('id');
         console.log(id);
-        return this.store.pipe(select(selectProductById(id)));
+        return this.store.pipe(select(selectProductById(`${id}`)));
       })
     );
     fetchData$.subscribe((data) => {

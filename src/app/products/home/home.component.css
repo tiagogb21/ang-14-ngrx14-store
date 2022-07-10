@@ -31,3 +31,14 @@
   background: #f94443;
   border-radius: 999px;
 }
+
+.btn-add {
+  background: #f94443;
+  color: white;
+}
+
+.btn-add__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
