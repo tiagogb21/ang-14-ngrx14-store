@@ -35,3 +35,17 @@ export const invokeUpdateProductAPI = createAction(
   '[Products API] Invoke update product api',
   props<{ updateProduct: Products }>()
 );
+
+// DELETE
+
+export const invokeDeleteProductAPI = createAction(
+  // triggers ngrx effect that executes delete API.
+  '[Products API] Invoke delete product api',
+  props<{ id: number }>()
+);
+
+export const deleteProductAPISuccess = createAction(
+  // Used by the reducer to remove the item from the store state.
+  '[Products API] Deleted product api success',
+  props<{ id: number }>()
+);

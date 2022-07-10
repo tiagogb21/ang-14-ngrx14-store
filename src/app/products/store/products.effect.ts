@@ -11,6 +11,8 @@ import {
   saveNewProductAPISucess,
   invokeUpdateProductAPI,
   updateProductAPISucess,
+  invokeDeleteProductAPI,
+  deleteProductAPISuccess,
 } from './products.action';
 import { selectProducts } from './products.selector';
 import { setAPIStatus } from 'src/app/shared/store/app.action';
@@ -57,7 +59,12 @@ export class ProductsEffect {
       ofType(invokeSaveNewProductAPI),
       switchMap((action: any) => {
         this.appStore.dispatch(
-          setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+          setAPIStatus({
+            apiStatus: {
+              apiResponseMessage: '',
+              apiStatus: '',
+            },
+          })
         );
         return this.productsService.create(action.newProduct).pipe(
           map((data) => {
@@ -82,16 +89,54 @@ export class ProductsEffect {
       ofType(invokeUpdateProductAPI),
       switchMap((action) => {
         this.appStore.dispatch(
-          setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+          setAPIStatus({
+            apiStatus: {
+              apiResponseMessage: '',
+              apiStatus: '',
+            },
+          })
         );
         return this.productsService.update(action.updateProduct).pipe(
           map((data) => {
             this.appStore.dispatch(
               setAPIStatus({
-                apiStatus: { apiResponseMessage: '', apiStatus: 'success' },
+                apiStatus: {
+                  apiResponseMessage: '',
+                  apiStatus: 'success',
+                },
               })
             );
             return updateProductAPISucess({ updateProduct: data });
+          })
+        );
+      })
+    );
+  });
+
+  // DELETE - DELETE:
+  deleteBooksAPI$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(invokeDeleteProductAPI),
+      switchMap((actions) => {
+        this.appStore.dispatch(
+          setAPIStatus({
+            apiStatus: {
+              apiResponseMessage: '',
+              apiStatus: '',
+            },
+          })
+        );
+        return this.productsService.delete(actions.id).pipe(
+          map(() => {
+            this.appStore.dispatch(
+              setAPIStatus({
+                apiStatus: {
+                  apiResponseMessage: '',
+                  apiStatus: 'success',
+                },
+              })
+            );
+            return deleteProductAPISuccess({ id: actions.id });
           })
         );
       })
