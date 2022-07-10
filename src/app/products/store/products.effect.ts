@@ -16,6 +16,7 @@ import {
 } from './products.action';
 import { selectProducts } from './products.selector';
 import { setAPIStatus } from 'src/app/shared/store/app.action';
+import { Products } from './products';
 
 @Injectable()
 export class ProductsEffect {
@@ -39,13 +40,19 @@ export class ProductsEffect {
         }
         return this.productsService.get().pipe(
           map((data: any) => {
+            const targetItem: string = '';
             return productsFetchAPISuccess({
-              allProducts: data.games.slice(0, 10).map((i: any) => {
-                return {
-                  ...i,
-                  photos: i.photos[0].url,
-                };
-              }),
+              allProducts: data.games
+                .slice(0, 10)
+                .filter((item: Products) =>
+                  item.title.toLowerCase().includes(targetItem.toLowerCase())
+                )
+                .map((i: any) => {
+                  return {
+                    ...i,
+                    photos: i.photos[0].url,
+                  };
+                }),
             });
           })
         );

@@ -1,4 +1,18 @@
+.loading {
+  background: #1b1919;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading h1 {
+  color: #f94443;
+}
+
 .home__container {
+  margin-top: 18vh;
   background: #1b1919;
   padding: 3vw;
 }
@@ -41,4 +55,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.btn-ed__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-ed__container button {
+  width: 40%;
+  background: #f94443;
+  border-radius: 10px;
+  opacity: 0.6;
+}
+
+.btn-ed__container button:hover {
+  opacity: 1;
 }

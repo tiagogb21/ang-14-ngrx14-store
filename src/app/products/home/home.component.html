@@ -1,3 +1,7 @@
+<section *ngIf="teste" class="loading">
+  <h1>Loading!</h1>
+</section>
+
 <section class="home__container">
   <section class="row row-cols-1 row-cols-md-3">
     <section class="col" *ngFor="let product of products$ | async">
@@ -11,7 +15,7 @@
           <div class="card-rating">
             <p>{{ product.rating }} / 10</p>
           </div>
-          <div>
+          <div class="btn-ed__container">
             <a [routerLink]="['/edit', product._id]" class="btn btn-dark"
               >Edit</a
             >
