@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
+import { switchMap } from 'rxjs';
+import { selectProductById } from 'src/app/products/store/products.selector';
 import { setAPIStatus } from 'src/app/shared/store/app.action';
 import { selectAppState } from 'src/app/shared/store/app.selector';
 import { Appstate } from 'src/app/shared/store/appstate';
@@ -14,9 +16,10 @@ import { invokeSaveNewProductAPI } from '../../products/store/products.action';
 })
 export class AddProductComponent implements OnInit {
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private store: Store,
-    private appStore: Store<Appstate>,
-    private router: Router
+    private appStore: Store<Appstate>
   ) {}
 
   productForm: Products = {
@@ -39,7 +42,21 @@ export class AddProductComponent implements OnInit {
     releaseYear: 0,
   };
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let fetchData$ = this.route.paramMap.pipe(
+      switchMap((params) => {
+        var id = Number(params.get('id'));
+        return this.store.pipe(select(selectProductById(id)));
+      })
+    );
+    fetchData$.subscribe((data) => {
+      if (data) {
+        this.productForm = { ...data };
+      } else {
+        this.router.navigate(['/']);
+      }
+    });
+  }
 
   cancel() {}
 

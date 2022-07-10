@@ -1,5 +1,5 @@
 <main>
-  <form action="">
+  <form action="" (ngSubmit)="login()">
     <article class="title__container">
       <h1>Sign In</h1>
       <h5>Insert you Account Information</h5>
@@ -7,27 +7,26 @@
     <article class="access__container">
       <label for="email">
         <input
+          placeholder="Username or Email"
           type="email"
           id="email"
           class="email"
           name="email"
           [(ngModel)]="email"
-          placeholder="Username or Email"
           required
         />
       </label>
       <label for="">
         <input
+          placeholder="Password"
           type="password"
           id="password"
-          class="password"
           name="password"
           [(ngModel)]="password"
-          placeholder="Password"
           required
         />
       </label>
-      <button>Login your Account</button>
+      <button type="submit">Login your Account</button>
       <p>
         No account?
         <a href="fabio@tindin.com.br" target="_blank" rel="noopener noreferrer">

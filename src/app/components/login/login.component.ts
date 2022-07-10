@@ -30,10 +30,7 @@ export class LoginComponent implements OnInit {
       return (this.errorMessage = 'All fields are required!');
     }
     return this.authService.login(this.email, this.password).subscribe(
-      () =>
-        this.router
-          .navigateByUrl('quizzes')
-          .then(() => window.location.reload()),
+      () => this.router.navigateByUrl('').then(() => window.location.reload()),
       () => (this.errorMessage = 'All fields are required!')
     );
   }
