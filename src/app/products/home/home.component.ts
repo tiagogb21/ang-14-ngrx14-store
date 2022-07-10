@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
 
     this.products$.subscribe((value) => {
       this.teste = value.length === 0;
-      console.log(this.teste);
     });
 
     this.store.dispatch(invokeProductsAPI());

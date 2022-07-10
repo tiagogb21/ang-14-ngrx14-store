@@ -1,20 +1,46 @@
-<!-- name -->
+<section class="product__container">
+  <!-- name -->
 
-<!-- image -->
+  <section class="galery__container">
+    <!-- image -->
+    <img src="{{ gameInfo.photos }}" alt="{{ gameInfo.title }}" />
+  </section>
 
-<!-- Product Details -->
-<!-- name of game -->
-<!-- Resume (1 line) -->
-<!-- Genres -->
-<!-- Studio -->
-<!-- Productor -->
-<!-- Total Votes -->
-<!-- Company -->
-<!-- Platforms -->
-<!-- Tags -->
+  <section class="product__details">
+    <article class="products_rt">
+      <!-- Grade -->
+      <p>{{ gameInfo.rating }}</p>
+      <!-- name of game -->
+      <h5>{{ gameInfo.title }}</h5>
+    </article>
+    <article>
+      <!-- Resume (1 line) -->
+      <p class="description">{{ gameInfo.description }}</p>
+      <!-- Genres -->
+      <p>
+        <strong>Genres</strong>:
+        <span>{{ gameInfo.genres[0] }}</span>
+      </p>
+      <!-- Studio -->
+      <p>
+        <strong>Studio:</strong>:
+        <span>Unknown</span>
+      </p>
+      <!-- Productor -->
+      <p>
+        <strong>Productor:</strong>:
+        <span>Unknown</span>
+      </p>
+      <!-- Total Votes -->
+      <!-- Company -->
+      <!-- Platforms -->
+      <!-- Tags -->
 
-<!-- Medium Price -->
-<!-- Release date -->
-<!-- Vote now -->
+      <!-- Medium Price -->
+      <!-- Release date -->
+      <!-- Vote now -->
+    </article>
+  </section>
 
-<!-- Description -->
+  <!-- Description -->
+</section>

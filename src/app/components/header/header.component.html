@@ -7,8 +7,8 @@
   </article>
   <!-- search -->
   <article class="search__container">
-    <input type="text" placeholder="Search Game Here" />
-    <button>search</button>
+    <input type="text" placeholder="Search Game Here" #newItem />
+    <button type="button" (click)="addNewItem(newItem.value)">search</button>
   </article>
   <!-- user -->
   <a routerLink="/login">

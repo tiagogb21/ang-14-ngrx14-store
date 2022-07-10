@@ -1,0 +1,37 @@
+.product__container {
+  height: 100vh;
+  background: blue;
+  margin-top: 18vh;
+  background: #1b1919;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  padding: 3vw;
+}
+
+.product__container {
+}
+
+.product__container img {
+  width: 80%;
+}
+
+.product__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.products_rt {
+  display: flex;
+}
+
+.products_rt p {
+  margin-right: 3vw;
+}
+
+.description {
+  width: 40vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
