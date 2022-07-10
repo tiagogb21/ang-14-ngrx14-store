@@ -3,6 +3,25 @@
   padding: 3vw;
 }
 
+.card-body {
+  text-align: center;
+}
+
 .card {
   margin: 1vw;
+  background: #1b1919;
+  color: #fff;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 0 50%; */
+}
+
+.card-rating p {
+  width: 30%;
+  background: #f94443;
+  border-radius: 999px;
 }

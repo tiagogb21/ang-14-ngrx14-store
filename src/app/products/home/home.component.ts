@@ -14,9 +14,7 @@ export class HomeComponent implements OnInit {
   products$ = this.store.pipe(select(selectProducts));
 
   ngOnInit(): void {
-    this.products$.subscribe((value: any[]) => {
-      console.log(value);
-    });
+    this.products$.subscribe((value: any[]) => {});
     this.store.dispatch(invokeProductsAPI());
   }
 }

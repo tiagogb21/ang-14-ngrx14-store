@@ -4,7 +4,7 @@
   background: #1b1919;
   justify-content: space-around;
   padding: 3vw;
-  height: 120vh;
+  height: 180vh;
 }
 
 .title__container {
@@ -47,17 +47,20 @@ label {
   margin-right: 3vw;
 }
 
-input {
+input,
+textarea {
   padding-left: 1vw;
   border: 0.5vw solid #f94443;
   background: #3f403f;
   color: white;
 }
 
+textarea,
 .input-length {
   width: 80%;
 }
 
+textarea::placeholder,
 input::placeholder {
   color: white;
 }

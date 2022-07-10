@@ -22,8 +22,11 @@ export class AddProductComponent implements OnInit {
     private appStore: Store<Appstate>
   ) {}
 
+  // The 'productForm' variable declared will be used to bind as a model for the edit form.
+
   productForm: Products = {
     title: '',
+    resume: '',
     description: '',
     photos: {
       name: '',
@@ -35,8 +38,6 @@ export class AddProductComponent implements OnInit {
     rating: 0,
     totalVotes: 0,
     videos: [],
-    createdAt: '',
-    updatedAt: '',
     _v: 0,
     mediumPrice: 0,
     releaseYear: 0,
@@ -45,7 +46,8 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
     let fetchData$ = this.route.paramMap.pipe(
       switchMap((params) => {
-        var id = Number(params.get('id'));
+        const id = Number(params.get('id'));
+        console.log(id);
         return this.store.pipe(select(selectProductById(id)));
       })
     );
@@ -53,18 +55,19 @@ export class AddProductComponent implements OnInit {
       if (data) {
         this.productForm = { ...data };
       } else {
-        this.router.navigate(['/']);
+        this.router.navigate(['/add-product']);
       }
     });
   }
 
   cancel() {}
 
-  save() {
+  update() {
     this.store.dispatch(
       invokeSaveNewProductAPI({ newProduct: this.productForm })
     );
     let apiStatus$ = this.appStore.pipe(select(selectAppState));
+    console.log(this.productForm);
     apiStatus$.subscribe((apState) => {
       if (apState.apiStatus == 'success') {
         this.appStore.dispatch(

@@ -7,17 +7,18 @@ interface Photos {
 export interface Products {
   _id?: string;
   title: string;
+  resume?: string;
   description: string;
-  photos: Photos;
+  photos?: Photos;
   genres: string[];
   platforms: string[];
   tags: string[];
   rating: number;
-  totalVotes: number;
-  videos: string[];
-  createdAt: string;
-  updatedAt: string;
-  _v: number;
+  totalVotes?: number;
+  videos?: string[];
+  createdAt?: string;
+  updatedAt?: string;
+  _v?: number;
   mediumPrice: number;
   releaseYear: number;
 }

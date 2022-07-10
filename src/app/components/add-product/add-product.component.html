@@ -1,5 +1,5 @@
 <!-- two way data binding -->
-<!-- ([(ngModel)]="productForm.tags") -->
+<!-- ([(ngModel)]="productForm.propertyName") -->
 
 <section class="add__container">
   <!-- Home -->
@@ -19,12 +19,13 @@
     <!-- form -->
 
     <div class="forms__container">
-      <!-- nota -->
+      <!-- greed -->
 
-      <!-- nome -->
+      <!-- title -->
       <div class="d-flex mb-3">
         <input
           type="text"
+          [(ngModel)]="productForm.title"
           class="game"
           id="txtProductName"
           placeholder="Enter game name"
@@ -36,6 +37,7 @@
       <div class="d-flex mb-3">
         <input
           type="text"
+          [(ngModel)]="productForm.resume"
           class="game"
           id="txtAuthor"
           placeholder="Enter resume game here"
@@ -105,6 +107,7 @@
         <label for="txtCost" class="form-label">Medium Price:</label>
         <input
           type="number"
+          [(ngModel)]="productForm.mediumPrice"
           class="input-length"
           id="txtCost"
           placeholder="Select one company"
@@ -112,18 +115,31 @@
       </div>
 
       <!-- Release Year -->
-
       <div class="d-flex mb-3">
         <label for="txtCost" class="form-label">Release Year:</label>
         <input
           type="text"
+          [(ngModel)]="productForm.releaseYear"
           class="input-length"
           id="txtCost"
           placeholder="Select one company"
         />
       </div>
+
+      <!-- Description -->
+      <div class="d-flex mb-3">
+        <label for="txtCost" class="form-label">Release Year:</label>
+        <textarea
+          name="description"
+          [(ngModel)]="productForm.description"
+          id="description"
+          class="textarea-length"
+          cols="50"
+          rows="5"
+          placeholder="Enter description game"
+        ></textarea>
+      </div>
     </div>
-    <!-- Description -->
   </section>
 
   <section class="button__container">
@@ -131,7 +147,7 @@
     <button type="button" class="btn btn-cancel">Cancel</button>
 
     <!-- Save Game -->
-    <button type="button" class="btn btn-save" (click)="save()">
+    <button type="button" class="btn btn-save" (click)="update()">
       Save Game
     </button>
   </section>

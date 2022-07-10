@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col col-md-4 offset-md-4">
-    <a routerLink="/add-product" class="btn btn-dark">Add A New Product</a>
+    <a routerLink="/add-product" class="btn btn-dark"> Add A New Product </a>
   </div>
 </div>
 
@@ -14,7 +14,9 @@
         <ul class="text-center list-group list-group-flush">
           <img src="{{ product.photos }}" alt="{{ product.title }}" />
           <p>{{ product.mediumPrice | currency }}</p>
-          <p>{{ product.rating }}/10</p>
+          <div class="card-rating">
+            <p>{{ product.rating }} / 10</p>
+          </div>
         </ul>
       </section>
     </section>
