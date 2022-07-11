@@ -19,7 +19,5 @@ export class HeaderComponent implements OnInit {
 
   products$ = this.store.pipe(select(selectProducts));
 
-  ngOnInit(): void {
-    console.log(this.products$);
-  }
+  ngOnInit(): void {}
 }

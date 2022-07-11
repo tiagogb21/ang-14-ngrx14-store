@@ -27,7 +27,6 @@ export class ProductsService {
   }
   // DELETE
   delete(id: string) {
-    console.log(id);
     return this.http.delete(`https://api-labs.tindin.com.br/games/${id}`);
   }
 }
