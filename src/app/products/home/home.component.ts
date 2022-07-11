@@ -8,6 +8,7 @@ import {
   invokeProductsAPI,
 } from '../store/products.action';
 import { selectProducts } from '../store/products.selector';
+import carrousselImages, { Carroussel } from '../../../data/data';
 
 declare var window: any;
 
@@ -20,13 +21,16 @@ export class HomeComponent implements OnInit {
   constructor(private store: Store, private appStore: Store<Appstate>) {}
 
   products$ = this.store.pipe(select(selectProducts));
-
   games: any[] = [];
   gamesClone: any[] = [];
   verify: boolean = true;
   deleteModal: any;
   idToDelete: string = '0';
   inputSearch: string = '';
+  token: boolean = true;
+  carroussel: Carroussel[] = carrousselImages;
+  chooseImage: number = 2;
+  targetImage: Carroussel = this.carroussel[0];
 
   ngOnInit(): void {
     this.deleteModal = new window.bootstrap.Modal(
@@ -40,6 +44,8 @@ export class HomeComponent implements OnInit {
     });
 
     this.store.dispatch(invokeProductsAPI());
+
+    this.token = !localStorage.getItem('token');
   }
 
   openDeleteModal(id: string) {
@@ -75,5 +81,20 @@ export class HomeComponent implements OnInit {
     this.games = this.gamesClone.filter((game) =>
       game.title.toLowerCase().includes(this.inputSearch.toLowerCase())
     );
+  }
+
+  increase() {
+    this.chooseImage += 1;
+    this.targetImage = this.carroussel[this.chooseImage % 3];
+  }
+
+  decrease() {
+    if (this.chooseImage === 0) {
+      this.chooseImage += 2;
+    } else {
+      this.chooseImage -= 1;
+    }
+    this.targetImage = this.carroussel[this.chooseImage % 3];
+    console.log(this.chooseImage);
   }
 }

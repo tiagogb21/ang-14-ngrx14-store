@@ -1,9 +1,37 @@
+<header>
+  <!-- logo -->
+  <article class="logo__container">
+    <a routerLink="">
+      <img src="../../../assets/tindin-logo.png" alt="" />
+    </a>
+  </article>
+  <!-- search -->
+  <article class="search__container" *ngIf="token">
+    <input
+      type="text"
+      [(ngModel)]="inputSearch"
+      placeholder="Search Game Here"
+      #newItem
+    />
+    <button type="button" (click)="gameSearch()">search</button>
+  </article>
+  <!-- user -->
+  <a routerLink="/login">
+    <img class="t" src="../../../assets/user.png" alt="" />
+  </a>
+</header>
+
 <section *ngIf="verify" class="loading">
   <h1>Loading!</h1>
 </section>
 
 <section class="home__container">
-  <section *ngIf="teste" class="title__container">
+  <section *ngIf="token" class="carroussel__container">
+    <button (click)="decrease()"><</button>
+    <img src="{{ targetImage.url }}" alt="{{ targetImage.name }}" />
+    <button (click)="increase()">></button>
+  </section>
+  <section *ngIf="!token" class="title__container">
     <article class="title__box">
       <!-- Games -->
       <h3>Games</h3>
