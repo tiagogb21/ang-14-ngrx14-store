@@ -47,7 +47,6 @@ export class AddProductComponent implements OnInit {
     let fetchData$ = this.route.paramMap.pipe(
       switchMap((params) => {
         const id = params.get('id');
-        console.log(id);
         return this.store.pipe(select(selectProductById(`${id}`)));
       })
     );
@@ -67,7 +66,6 @@ export class AddProductComponent implements OnInit {
       invokeSaveNewProductAPI({ newProduct: this.productForm })
     );
     let apiStatus$ = this.appStore.pipe(select(selectAppState));
-    console.log(this.productForm);
     apiStatus$.subscribe((apState) => {
       if (apState.apiStatus == 'success') {
         this.appStore.dispatch(

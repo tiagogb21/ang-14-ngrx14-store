@@ -24,7 +24,7 @@ export class ProductDetailsComponent implements OnInit {
 
   products$ = this.store.pipe(select(selectProducts));
   grade: any;
-  teste: number = 0;
+  note: number = 0;
   totalVotes: any;
 
   ngOnInit(): void {
@@ -35,14 +35,13 @@ export class ProductDetailsComponent implements OnInit {
         return item._id === this.productId;
       });
       this.gameInfo = getGameInfo[0];
-      console.log(this.gameInfo);
       this.grade = getGameInfo[0].rating;
       this.totalVotes = getGameInfo[0].totalVotes;
     });
   }
 
   changeGrade() {
-    this.grade = this.teste;
+    this.grade = this.note;
     this.totalVotes += 1;
   }
 }

@@ -95,6 +95,5 @@ export class HomeComponent implements OnInit {
       this.chooseImage -= 1;
     }
     this.targetImage = this.carroussel[this.chooseImage % 3];
-    console.log(this.chooseImage);
   }
 }
