@@ -36,8 +36,8 @@ header {
 }
 
 .carroussel__container button {
-  width: 3vw;
-  height: 3vw;
+  width: 30%;
+  height: 30%;
   border: 2px solid red;
   color: red;
 }
@@ -49,24 +49,24 @@ header {
   width: 37vw;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .search__container input {
   border: none;
-  font-size: 1.5vw;
+  font-size: 0.5rem;
 }
 
 .search__container button {
   border-radius: 100px;
   background: #f94443;
   color: #fff;
-  background: rgb(10, 10, 10);
   padding: 1vw;
-  text-transform: uppercase;
   font-weight: bolder;
+  text-transform: uppercase;
 }
 
-.t {
+.login {
   width: 4vw;
   background: #fff;
   border-radius: 50%;
@@ -147,6 +147,11 @@ header {
 
 .card-body button {
   background: #f94443;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .box__container {
@@ -175,7 +180,7 @@ header {
 }
 
 .card-rating p {
-  width: 30%;
+  width: 50%;
   background: #f94443;
   border-radius: 999px;
   margin: 2vw 0 4vw 0;
