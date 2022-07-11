@@ -4,4 +4,28 @@ footer {
   height: 10vh;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 5vw 3vw;
+}
+
+.midia__container {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+}
+
+.box__img {
+  border: 3px solid rgb(250, 250, 250);
+  border-radius: 50%;
+  padding: 1vw;
+}
+
+.midia__container img {
+  width: 3vw;
+  height: 3vw;
+  filter: opacity(0.6) drop-shadow(0 0 0 #f94443);
+}
+
+p {
+  margin-bottom: 0;
 }

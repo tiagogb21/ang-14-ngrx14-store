@@ -1,7 +1,7 @@
 .loading {
   background: #1b1919;
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +9,20 @@
 
 .loading h1 {
   color: #f94443;
+}
+
+.title__container {
+  width: 90vw;
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title__box {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
 }
 
 .home__container {
@@ -19,6 +33,10 @@
 
 .card-body {
   text-align: center;
+}
+
+.box__container {
+  background: #1b1919;
 }
 
 .card {
@@ -71,4 +89,8 @@
 
 .btn-ed__container button:hover {
   opacity: 1;
+}
+
+img {
+  width: 50%;
 }

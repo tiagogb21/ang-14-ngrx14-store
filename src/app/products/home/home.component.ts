@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   products$ = this.store.pipe(select(selectProducts));
 
-  teste: boolean = true;
+  verify: boolean = true;
   deleteModal: any;
   idToDelete: string = '0';
 
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     );
 
     this.products$.subscribe((value) => {
-      this.teste = value.length === 0;
+      this.verify = value.length === 0;
     });
 
     this.store.dispatch(invokeProductsAPI());

@@ -1,46 +1,78 @@
-<section class="product__container">
+<main>
   <!-- name -->
+  <p class="title">{{ gameInfo.title }}</p>
 
-  <section class="galery__container">
-    <!-- image -->
-    <img src="{{ gameInfo.photos }}" alt="{{ gameInfo.title }}" />
+  <section class="product__container">
+    <section class="galery__container">
+      <!-- image -->
+      <img src="{{ gameInfo.photos }}" alt="{{ gameInfo.title }}" />
+    </section>
+
+    <section class="product__details">
+      <article class="products_rt">
+        <!-- Grade -->
+        <p class="p-rate">{{ gameInfo.rating }}/10</p>
+        <!-- name of game -->
+        <h5>{{ gameInfo.title }}</h5>
+      </article>
+      <hr />
+      <article>
+        <!-- Resume (1 line) -->
+        <p class="description">{{ gameInfo.description }}</p>
+        <!-- Genres -->
+        <p>
+          <strong>Genres</strong>:
+          <span>{{ gameInfo.genres[0] }}</span>
+        </p>
+        <!-- Studio -->
+        <p>
+          <strong>Studio</strong>:
+          <span>Unknown</span>
+        </p>
+        <!-- Productor -->
+        <p>
+          <strong>Productor</strong>:
+          <span>Unknown</span>
+        </p>
+        <!-- Total Votes -->
+        <p>
+          <strong>Total Votes</strong>:
+          <span>{{ gameInfo.totalVotes }}</span>
+        </p>
+        <!-- Company -->
+        <p>
+          <strong>Company</strong>:
+          <span>Unknown</span>
+        </p>
+        <!-- Platforms -->
+        <p>
+          <strong>Company</strong>:
+          <span *ngFor="let item of gameInfo.platforms">{{ item }}, </span>
+        </p>
+        <!-- Tags -->
+        <p>
+          <strong>Tags</strong>:
+          <span *ngFor="let item of gameInfo.tags">#{{ item }}, </span>
+        </p>
+        <hr />
+        <article class="price__container">
+          <!-- Medium Price -->
+          <article>
+            <h3>
+              Medium Price
+              <span class="span-price">{{
+                gameInfo.mediumPrice | currency
+              }}</span>
+            </h3>
+            <!-- Release date -->
+            <p>Release Date: {{ gameInfo.releaseYear }}</p>
+          </article>
+          <!-- Vote now -->
+          <button class="btn-vote">vote now</button>
+        </article>
+        <hr />
+      </article>
+    </section>
   </section>
-
-  <section class="product__details">
-    <article class="products_rt">
-      <!-- Grade -->
-      <p>{{ gameInfo.rating }}</p>
-      <!-- name of game -->
-      <h5>{{ gameInfo.title }}</h5>
-    </article>
-    <article>
-      <!-- Resume (1 line) -->
-      <p class="description">{{ gameInfo.description }}</p>
-      <!-- Genres -->
-      <p>
-        <strong>Genres</strong>:
-        <span>{{ gameInfo.genres[0] }}</span>
-      </p>
-      <!-- Studio -->
-      <p>
-        <strong>Studio:</strong>:
-        <span>Unknown</span>
-      </p>
-      <!-- Productor -->
-      <p>
-        <strong>Productor:</strong>:
-        <span>Unknown</span>
-      </p>
-      <!-- Total Votes -->
-      <!-- Company -->
-      <!-- Platforms -->
-      <!-- Tags -->
-
-      <!-- Medium Price -->
-      <!-- Release date -->
-      <!-- Vote now -->
-    </article>
-  </section>
-
   <!-- Description -->
-</section>
+</main>
