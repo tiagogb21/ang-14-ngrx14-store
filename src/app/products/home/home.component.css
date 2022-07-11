@@ -26,6 +26,11 @@
   margin-left: 5vw;
 }
 
+.search__box {
+  display: flex;
+  align-items: center;
+}
+
 .search__box input {
   height: 8vh;
   margin-right: 1vw;
@@ -35,7 +40,7 @@
   color: #fff;
 }
 
-.search__box button {
+.search__box a {
   width: 10vw;
   border: none;
   text-transform: uppercase;
@@ -68,6 +73,8 @@
   margin: 1vw;
   background: #1b1919;
   color: #fff;
+  padding: 1vw;
+  border: 1px solid #474747;
 }
 
 .card-price {
@@ -87,6 +94,7 @@
   width: 30%;
   background: #f94443;
   border-radius: 999px;
+  margin: 2vw 0 4vw 0;
 }
 
 .btn-add {
@@ -117,5 +125,6 @@
 }
 
 img {
-  width: 50%;
+  width: 90%;
+  margin: 2vw;
 }

@@ -11,10 +11,9 @@ import { productReducer } from './store/products.reducer';
 
 import { EffectsModule } from '@ngrx/effects';
 import { ProductsEffect } from './store/products.effect';
-import { AddComponent } from './add/add.component';
 
 @NgModule({
-  declarations: [HomeComponent, AddComponent],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule,

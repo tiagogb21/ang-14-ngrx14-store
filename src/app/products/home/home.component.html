@@ -3,7 +3,7 @@
 </section>
 
 <section class="home__container">
-  <section class="title__container">
+  <section *ngIf="teste" class="title__container">
     <article class="title__box">
       <!-- Games -->
       <h3>Games</h3>
@@ -11,16 +11,20 @@
       <h5>Games manager portal</h5>
     </article>
     <article class="search__box">
-      <input type="text" name="" id="" placeholder="search from..." />
-      <button>new game</button>
+      <input
+        type="text"
+        name=""
+        id=""
+        [(ngModel)]="inputSearch"
+        placeholder="search from..."
+        (ngModelChange)="gameSearch()"
+      />
+      <a routerLink="/add-product" class="btn btn-add"> new game </a>
     </article>
   </section>
   <section></section>
   <section class="row row-cols-1 row-cols-md-3">
-    <section
-      class="box__container col"
-      *ngFor="let product of products$ | async"
-    >
+    <section class="box__container col" *ngFor="let product of games">
       <section class="card">
         <article class="card-body">
           <h5 class="card-title">{{ product.title }}</h5>
@@ -84,9 +88,4 @@
       </div>
     </div>
   </section>
-  <div class="row">
-    <div class="btn-add__container col col-md-4 offset-md-4">
-      <a routerLink="/add-product" class="btn btn-add"> Add A New Product </a>
-    </div>
-  </div>
 </section>

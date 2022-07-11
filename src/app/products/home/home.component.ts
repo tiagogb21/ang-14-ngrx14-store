@@ -21,9 +21,12 @@ export class HomeComponent implements OnInit {
 
   products$ = this.store.pipe(select(selectProducts));
 
+  games: any[] = [];
+  gamesClone: any[] = [];
   verify: boolean = true;
   deleteModal: any;
   idToDelete: string = '0';
+  inputSearch: string = '';
 
   ngOnInit(): void {
     this.deleteModal = new window.bootstrap.Modal(
@@ -32,6 +35,8 @@ export class HomeComponent implements OnInit {
 
     this.products$.subscribe((value) => {
       this.verify = value.length === 0;
+      this.games = [...value];
+      this.gamesClone = [...value];
     });
 
     this.store.dispatch(invokeProductsAPI());
@@ -64,5 +69,11 @@ export class HomeComponent implements OnInit {
         );
       }
     });
+  }
+
+  gameSearch() {
+    this.games = this.gamesClone.filter((game) =>
+      game.title.toLowerCase().includes(this.inputSearch.toLowerCase())
+    );
   }
 }
