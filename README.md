@@ -33,7 +33,7 @@ ng build
 <p>Projeto de uma loja de jogo utilizando a linguagem angular.</p>
 <p>O projeto buscou realizar o CRUD (CREATE, READ, DELETE, UPDATE) de produtos.</p>
 
-### Usuário:
+### Projeto:
 
 <br />
 
