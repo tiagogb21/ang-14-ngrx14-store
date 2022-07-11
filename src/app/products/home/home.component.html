@@ -56,25 +56,17 @@
       <section class="card">
         <article class="card-body">
           <h5 class="card-title">{{ product.title }}</h5>
+          <button class="btn btn-dark" (click)="openDeleteModal(product._id!)">
+            x
+          </button>
         </article>
         <ul class="text-center list-group list-group-flush">
-          <a [routerLink]="['/edit', product._id]">
+          <a [routerLink]="['/details', product._id]">
             <img src="{{ product.photos }}" alt="{{ product.title }}" />
           </a>
           <p class="card-price">{{ product.mediumPrice | currency }}</p>
           <div class="card-rating">
             <p>{{ product.rating }} / 10</p>
-          </div>
-          <div class="btn-ed__container">
-            <a [routerLink]="['/edit', product._id]" class="btn btn-dark"
-              >Edit</a
-            >
-            <button
-              class="btn btn-dark"
-              (click)="openDeleteModal(product._id!)"
-            >
-              Delete
-            </button>
           </div>
         </ul>
       </section>

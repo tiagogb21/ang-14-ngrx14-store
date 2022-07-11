@@ -140,7 +140,13 @@ header {
 }
 
 .card-body {
+  display: flex;
   text-align: center;
+  justify-content: space-between;
+}
+
+.card-body button {
+  background: #f94443;
 }
 
 .box__container {

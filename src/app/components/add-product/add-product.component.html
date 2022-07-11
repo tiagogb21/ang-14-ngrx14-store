@@ -1,5 +1,4 @@
-<!-- two way data binding -->
-<!-- ([(ngModel)]="productForm.propertyName") -->
+<app-header class="dark"></app-header>
 
 <section class="add__container">
   <!-- Home -->
@@ -49,7 +48,7 @@
       <div class="d-flex mb-3">
         <label for="txtCost" class="mr-3 form-label">Genres:</label>
         <input
-          type="number"
+          type="text"
           class="input-length"
           id="txtCost"
           placeholder="Select genres"
@@ -61,7 +60,7 @@
       <div class="d-flex mb-3 align-items-center">
         <label for="txtCost" class="form-label">Studio:</label>
         <input
-          type="number"
+          type="text"
           class="input-length"
           id="txtCost"
           placeholder="Select one studio"
@@ -86,7 +85,7 @@
         <input
           class="input-length"
           id="txtCost"
-          placeholder="Select one company"
+          placeholder="Select platforms"
         />
       </div>
 
@@ -94,11 +93,7 @@
 
       <div class="d-flex mb-3">
         <label for="txtCost" class="form-label">Tags:</label>
-        <input
-          class="input-length"
-          id="txtCost"
-          placeholder="Select one company"
-        />
+        <input class="input-length" id="txtCost" placeholder="Select tags" />
       </div>
 
       <!-- Medium Price -->
@@ -118,17 +113,19 @@
       <div class="d-flex mb-3">
         <label for="txtCost" class="form-label">Release Year:</label>
         <input
-          type="text"
+          type="number"
           [(ngModel)]="productForm.releaseYear"
           class="input-length"
           id="txtCost"
-          placeholder="Select one company"
+          min="2000"
+          max="2022"
+          placeholder="Enter release year"
         />
       </div>
 
       <!-- Description -->
       <div class="d-flex mb-3">
-        <label for="txtCost" class="form-label">Release Year:</label>
+        <label for="txtCost" class="form-label">Description:</label>
         <textarea
           name="description"
           [(ngModel)]="productForm.description"
