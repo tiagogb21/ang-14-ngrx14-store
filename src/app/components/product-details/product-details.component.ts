@@ -23,6 +23,9 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   products$ = this.store.pipe(select(selectProducts));
+  grade: any;
+  teste: number = 0;
+  totalVotes: any;
 
   ngOnInit(): void {
     this.store.dispatch(invokeProductsAPI());
@@ -33,6 +36,13 @@ export class ProductDetailsComponent implements OnInit {
       });
       this.gameInfo = getGameInfo[0];
       console.log(this.gameInfo);
+      this.grade = getGameInfo[0].rating;
+      this.totalVotes = getGameInfo[0].totalVotes;
     });
+  }
+
+  changeGrade() {
+    this.grade = this.teste;
+    this.totalVotes += 1;
   }
 }

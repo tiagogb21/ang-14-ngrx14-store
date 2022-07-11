@@ -18,6 +18,19 @@ main {
   text-align: center;
   border-radius: 10px;
   font-weight: bolder;
+  width: 20%;
+}
+
+.p-rate input {
+  background: #f94443;
+  border: none;
+  width: 50%;
+  text-align: center;
+  color: white;
+}
+
+.p-rate input::placeholder {
+  color: white;
 }
 
 span,

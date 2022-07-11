@@ -12,7 +12,18 @@
     <section class="product__details">
       <article class="products_rt">
         <!-- Grade -->
-        <p class="p-rate">{{ gameInfo.rating }}/10</p>
+        <p class="p-rate">
+          <input
+            type="number"
+            name=""
+            id=""
+            [(ngModel)]="teste"
+            placeholder="{{ grade }}"
+            min="0"
+            max="10"
+          />
+          /10
+        </p>
         <!-- name of game -->
         <h5>{{ gameInfo.title }}</h5>
       </article>
@@ -38,7 +49,7 @@
         <!-- Total Votes -->
         <p>
           <strong>Total Votes</strong>:
-          <span>{{ gameInfo.totalVotes }}</span>
+          <span>{{ totalVotes }}</span>
         </p>
         <!-- Company -->
         <p>
@@ -69,7 +80,7 @@
             <p>Release Date: {{ gameInfo.releaseYear }}</p>
           </article>
           <!-- Vote now -->
-          <button class="btn-vote">vote now</button>
+          <button class="btn-vote" (click)="changeGrade()">vote now</button>
         </article>
         <hr />
       </article>

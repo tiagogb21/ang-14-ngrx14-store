@@ -1,27 +1,65 @@
-# Ang14Ngrx14Store
+# tindin-store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
+## Setup do Projeto:
 
-## Development server
+```
+npm install
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Compila e recerrega para desenvolvimento
 
-## Code scaffolding
+```
+ng serve
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Build
 
-## Build
+```
+ng build
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<br />
 
-## Running unit tests
+### Objetivo - organização e padronização:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Lint
+- Prettier
+- Editorconfig
 
-## Running end-to-end tests
+<br />
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Objetivo:
 
-## Further help
+<p>Projeto de uma loja de jogo utilizando a linguagem angular.</p>
+<p>O projeto buscou realizar o CRUD (CREATE, READ, DELETE, UPDATE) de produtos.</p>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Usuário:
+
+<br />
+
+<p> O projeto possui um total de 4 telas </p>
+
+<ol>
+  <li>Login - Login</li>
+  <li>Tela Inicial - Home</li>
+  <li>Tela Inicial Pos Login - Home</li>
+  <li>Detalhes - Product Details</li>
+  <li>Tela cadastro - Add Product</li>
+</ol>
+
+<br />
+
+<h3> # Login </h3>
+<p> Apenas o usuário cadastrado poderá fazer login </p>
+
+<h3> # Tela Inicial</h3>
+<p> O usuário pode procurar por produtos na barra de pesquisa </p>
+<p> O usuário pode verificar os detalhes de um produto </p>
+<p> O usuário pode excluir um produto </p>
+
+<h3> # Detalhes </h3>
+<p> O usuário pode ver as informações relativas a um produto </p>
+<p> O usuário pode dar nota a um produto, quando fizer isso o produto irá receber uma nova nota e o número de votos irá aumentar <p>
+
+<h3># Tela cadastro</h3>
+<p>O usuário poderá cadastrar um novo produto</p>
