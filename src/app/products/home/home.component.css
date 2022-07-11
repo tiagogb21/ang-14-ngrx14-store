@@ -13,16 +13,41 @@
 
 .title__container {
   width: 90vw;
-  height: 20vh;
+  height: 25vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #fff;
 }
 
 .title__box {
   display: flex;
   flex-direction: column;
+  margin-left: 5vw;
+}
+
+.search__box input {
+  height: 8vh;
+  margin-right: 1vw;
+  padding-left: 10px;
+  border: 3px solid #f94443;
+  background: #1b1919;
   color: #fff;
+}
+
+.search__box button {
+  width: 10vw;
+  border: none;
+  text-transform: uppercase;
+  padding: 1vw;
+  background: #f94443;
+  color: #fff;
+  border-radius: 5px;
+  opacity: 0.7;
+}
+
+.search__box button:hover {
+  opacity: 1;
 }
 
 .home__container {
